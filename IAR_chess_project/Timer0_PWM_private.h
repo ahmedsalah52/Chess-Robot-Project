@@ -1,0 +1,15 @@
+#define GPTMCFG         (*((volatile u32 *)0x40036000))
+#define GPTMTAMR        (*((volatile u32 *)0x40036004))
+#define GPTMTAILR       (*((volatile u32 *)0x40036028))
+#define GPTMTAMATCHR    (*((volatile u32 *)0x40036030))
+#define GPTMCTL         (*((volatile u32 *)0x4003600C))
+#define GPIOPCTL        (*((volatile u32 *)0x4000652C))
+#define GPIOAFSEL       (*((volatile u32 *)0x40006420))
+#define GPIOAMSEL       (*((volatile u32 *)0x40006528))
+#define GPIODEN         (*((volatile u32 *)0x4000651c))
+#define RCGCWTIMER      (*((volatile u32 *)0x400FE65c))
+#define RCGCGPIO        (*((volatile u32 *)0x400FE608))
+
+#define REG6INTEN       (*((volatile u32 *)0xE000E108))
+#define GPTMIMR         (*((volatile u32 *)0x40036018))
+

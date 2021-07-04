@@ -1,0 +1,387 @@
+###############################################################################
+#
+# IAR ELF Linker V8.32.2.178/W32 for ARM                  07/Jan/2021  18:32:16
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  E:\WorkSpace\IAR\Chess Project\Debug\Exe\chess.out
+#    Map file     =  E:\WorkSpace\IAR\Chess Project\Debug\List\chess.map
+#    Command line =  
+#        -f C:\Users\AHMATR~1\AppData\Local\Temp\EWC234.tmp
+#        ("E:\WorkSpace\IAR\Chess Project\Debug\Obj\bsp.o"
+#        "E:\WorkSpace\IAR\Chess Project\Debug\Obj\chess.o"
+#        "E:\WorkSpace\IAR\Chess Project\Debug\Obj\GPIO_prog.o"
+#        "E:\WorkSpace\IAR\Chess Project\Debug\Obj\main.o"
+#        "E:\WorkSpace\IAR\Chess Project\Debug\Obj\PLL_prog.o"
+#        "E:\WorkSpace\IAR\Chess Project\Debug\Obj\Robot.o"
+#        "E:\WorkSpace\IAR\Chess Project\Debug\Obj\startup_tm4c.o"
+#        "E:\WorkSpace\IAR\Chess Project\Debug\Obj\SysTick_prog.o"
+#        "E:\WorkSpace\IAR\Chess Project\Debug\Obj\Timer0_16_PWM_prog.o"
+#        "E:\WorkSpace\IAR\Chess Project\Debug\Obj\Timer0_PWM_prog.o"
+#        "E:\WorkSpace\IAR\Chess Project\Debug\Obj\Timer1_PWM_prog.o"
+#        "E:\WorkSpace\IAR\Chess Project\Debug\Obj\Timer5_PWM_prog.o"
+#        --no_out_extension -o "E:\WorkSpace\IAR\Chess
+#        Project\Debug\Exe\chess.out" --redirect _Printf=_PrintfFullNoMb
+#        --redirect _Scanf=_ScanfFullNoMb --map "E:\WorkSpace\IAR\Chess
+#        Project\Debug\List\chess.map" --config "C:\Program Files (x86)\IAR
+#        Systems\Embedded Workbench
+#        8.2\arm\config\linker\TexasInstruments\TM4C123GH6.icf" --semihosting
+#        --entry __iar_program_start "C:\Program Files (x86)\IAR
+#        Systems\Embedded Workbench
+#        8.2\arm\CMSIS\Lib\IAR\iar_cortexM4lf_math.a" --no_vfe --text_out
+#        locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x3'ffff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'7fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                       0x26c
+  .intvec            const            0x0   0x26c  startup_tm4c.o [1]
+                                  - 0x26c   0x26c
+
+"P1":                                      0x5410
+  .text              ro code        0x26c  0x2102  Robot.o [1]
+  .text              ro code       0x2370    0xc4  Timer0_PWM_prog.o [1]
+  .text              ro code       0x2434   0x4f0  GPIO_prog.o [1]
+  .text              ro code       0x2924    0x1a  U32ToDbl.o [3]
+  .text              ro code       0x2940   0x1a2  DblMul.o [3]
+  .text              ro code       0x2ae4   0x17a  DblAdd.o [3]
+  .text              ro code       0x2c60   0x246  DblDiv.o [3]
+  .text              ro code       0x2ea8    0x36  math_wrappers64.o [3]
+  .text              ro code       0x2ee0   0x102  sqrt.o [3]
+  .text              ro code       0x2fe4    0xe2  DblSub.o [3]
+  .text              ro code       0x30c8    0x3a  DblToS32.o [3]
+  .text              ro code       0x3104    0xc8  acos64.o [3]
+  .text              ro code       0x31cc    0xec  asin64.o [3]
+  .text              ro code       0x32b8    0xa8  atan64.o [3]
+  .text              ro code       0x3360   0x440  cos_sin64.o [3]
+  .text              ro code       0x37a0    0x2e  DblCmpLe.o [3]
+  .text              ro code       0x37d0   0x1d0  iar_Atan64.o [3]
+  .text              ro code       0x39a0    0x2e  DblCmpGe.o [3]
+  .text              ro code       0x39d0    0x22  S32ToDbl.o [3]
+  .text              ro code       0x39f4    0x20  DblCmpEq.o [3]
+  .text              ro code       0x3a14  0x1984  chess.o [1]
+  .text              ro code       0x5398     0x6  ABImemclr4.o [4]
+  .text              ro code       0x53a0    0x32  ABImemset48.o [4]
+  .text              ro code       0x53d4    0x84  main.o [1]
+  .text              ro code       0x5458    0x54  startup_tm4c.o [1]
+  .text              ro code       0x54ac    0x36  bsp.o [1]
+  .text              ro code       0x54e4     0x2  SysTick_prog.o [1]
+  .rodata            const         0x54e8     0xc  startup_tm4c.o [1]
+  .rodata            const         0x54f8    0x40  iar_Atan64.o [3]
+  .text              ro code       0x5538    0x38  packbits_init_single.o [4]
+  .text              ro code       0x5570    0x28  data_init.o [4]
+  .text              ro code       0x5598    0x22  fpinit_M.o [3]
+  .iar.init_table    const         0x55bc    0x10  - Linker created -
+  .text              ro code       0x55cc    0x1e  cmain.o [4]
+  .text              ro code       0x55ea     0x4  low_level_init.o [2]
+  .text              ro code       0x55ee     0x4  exit.o [2]
+  .text              ro code       0x55f4     0xa  cexit.o [4]
+  .text              ro code       0x5600    0x14  exit.o [5]
+  .rodata            const         0x5614     0xc  startup_tm4c.o [1]
+  .rodata            const         0x5620     0xc  startup_tm4c.o [1]
+  .rodata            const         0x562c     0xc  startup_tm4c.o [1]
+  .text              ro code       0x5638     0xc  cstartup_M.o [4]
+  .rodata            const         0x5644     0x8  Robot.o [1]
+  .rodata            const         0x564c     0x8  Robot.o [1]
+  .rodata            const         0x5654     0x8  startup_tm4c.o [1]
+  .rodata            const         0x565c     0x4  startup_tm4c.o [1]
+  .rodata            const         0x5660     0x0  packbits_init_single.o [4]
+  Initializer bytes  const         0x5660    0x1c  <for P2-1>
+                                 - 0x567c  0x5410
+
+"P2", part 1 of 2:                           0x5c
+  P2-1                        0x2000'0000    0x5c  <Init block>
+    .bss             inited   0x2000'0000     0x8  chess.o [1]
+    .data            inited   0x2000'0008    0x40  chess.o [1]
+    .bss             inited   0x2000'0048     0x8  Robot.o [1]
+    .bss             inited   0x2000'0050     0x2  main.o [1]
+    .bss             inited   0x2000'0052     0x2  Robot.o [1]
+    .bss             inited   0x2000'0054     0x2  Robot.o [1]
+    .bss             inited   0x2000'0056     0x2  Robot.o [1]
+    .bss             inited   0x2000'0058     0x1  Robot.o [1]
+    .bss             inited   0x2000'0059     0x1  Robot.o [1]
+    .bss             inited   0x2000'005a     0x1  Robot.o [1]
+    .bss             inited   0x2000'005b     0x1  Robot.o [1]
+                            - 0x2000'005c    0x5c
+
+"P2", part 2 of 2:                         0x1000
+  CSTACK                      0x2000'0060  0x1000  <Block>
+    CSTACK           uninit   0x2000'0060  0x1000  <Block tail>
+                            - 0x2000'1060  0x1000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+       0x567c     0x3'ffff  0x3'a984
+  0x2000'005c  0x2000'005f       0x4
+  0x2000'1060  0x2000'7fff    0x6fa0
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0x1c (30% of destination):
+               0x5660  0x1c
+    1 destination range, total size 0x5c:
+          0x2000'0000  0x5c
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+command line/config:
+    -------------------------------------------------
+    Total:
+
+E:\WorkSpace\IAR\Chess Project\Debug\Obj: [1]
+    GPIO_prog.o               1 264
+    Robot.o                   8 450       23       18
+    SysTick_prog.o                2
+    Timer0_PWM_prog.o           196
+    bsp.o                        54
+    chess.o                   6 532       21       72
+    main.o                      132                 2
+    startup_tm4c.o               84      680
+    -------------------------------------------------
+    Total:                   16 714      724       92
+
+dl7M_tln.a: [2]
+    exit.o                        4
+    low_level_init.o              4
+    -------------------------------------------------
+    Total:                        8
+
+m7M_tls.a: [3]
+    DblAdd.o                    378
+    DblCmpEq.o                   32
+    DblCmpGe.o                   46
+    DblCmpLe.o                   46
+    DblDiv.o                    582
+    DblMul.o                    418
+    DblSub.o                    226
+    DblToS32.o                   58
+    S32ToDbl.o                   34
+    U32ToDbl.o                   26
+    acos64.o                    200
+    asin64.o                    236
+    atan64.o                    168
+    cos_sin64.o               1 088
+    fpinit_M.o                   34
+    iar_Atan64.o                464       64
+    math_wrappers64.o            54
+    sqrt.o                      258
+    -------------------------------------------------
+    Total:                    4 348       64
+
+rt7M_tl.a: [4]
+    ABImemclr4.o                  6
+    ABImemset48.o                50
+    cexit.o                      10
+    cmain.o                      30
+    cstartup_M.o                 12
+    data_init.o                  40
+    packbits_init_single.o       56
+    -------------------------------------------------
+    Total:                      204
+
+shb_l.a: [5]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Gaps                         34        8
+    Linker created                        16    4 096
+-----------------------------------------------------
+    Grand Total:             21 328      812    4 188
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base        0x55bc          --   Gb  - Linker created -
+.iar.init_table$$Limit       0x55cc          --   Gb  - Linker created -
+?main                        0x55cd         Code  Gb  cmain.o [4]
+Bishop                       0x4e35  0x332  Code  Gb  chess.o [1]
+BusFault_Handler             0x5477    0xa  Code  Gb  startup_tm4c.o [1]
+CSTACK$$Base            0x2000'0060          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'1060         Data  Gb  - Linker created -
+Calculate_Score              0x3db3  0x354  Code  Gb  chess.o [1]
+CheckMate                    0x1e91  0x4a4  Code  Gb  Robot.o [1]
+Check_Board                   0xd11  0x30a  Code  Gb  Robot.o [1]
+Check_Cell                    0xbff   0x78  Code  Gb  Robot.o [1]
+Check_Legal_Move             0x1159   0x7e  Code  Gb  Robot.o [1]
+Check_Move                   0x1029   0xec  Code  Gb  Robot.o [1]
+Close_Gripper                 0xbe9    0xc  Code  Gb  Robot.o [1]
+Column                       0x1433    0x6  Code  Gb  Robot.o [1]
+Curr_A                  0x2000'0056    0x2  Data  Gb  Robot.o [1]
+Curr_B                  0x2000'0052    0x2  Data  Gb  Robot.o [1]
+Curr_M                  0x2000'0054    0x2  Data  Gb  Robot.o [1]
+Delay_CC                     0x2335   0x18  Code  Gb  Robot.o [1]
+Delay_ms                     0x234d   0x22  Code  Gb  Robot.o [1]
+E_Bishop                     0x17dd  0x1f2  Code  Gb  Robot.o [1]
+E_King                       0x1cf7  0x19a  Code  Gb  Robot.o [1]
+E_Knight                     0x1b63  0x194  Code  Gb  Robot.o [1]
+E_Pawn                       0x1455  0x174  Code  Gb  Robot.o [1]
+E_Queen                      0x15c9  0x214  Code  Gb  Robot.o [1]
+E_Rook                       0x19cf  0x194  Code  Gb  Robot.o [1]
+First_move              0x2000'0059    0x1  Data  Gb  Robot.o [1]
+GPIO_u8GetPinValue           0x27df   0x66  Code  Gb  GPIO_prog.o [1]
+GPIO_voidSetInputPin_PDR
+                             0x263b   0x7e  Code  Gb  GPIO_prog.o [1]
+GPIO_voidSetPinDir           0x2435  0x206  Code  Gb  GPIO_prog.o [1]
+GPIO_voidSetPinValue         0x26b9  0x126  Code  Gb  GPIO_prog.o [1]
+General_Best_score      0x2000'0000    0x8  Data  Gb  chess.o [1]
+Go_Position                   0x4c1  0x31e  Code  Gb  Robot.o [1]
+HardFault_Handler            0x5459    0xa  Code  Gb  startup_tm4c.o [1]
+King                         0x5283  0x112  Code  Gb  chess.o [1]
+King_INIT_POS           0x2000'0058    0x1  Data  Gb  Robot.o [1]
+Knight                       0x516d  0x116  Code  Gb  chess.o [1]
+Last_Base_Sign          0x2000'005b    0x1  Data  Gb  Robot.o [1]
+Make_Move                    0x11d7  0x22c  Code  Gb  Robot.o [1]
+Make_Robot_Move               0x3c1  0x100  Code  Gb  Robot.o [1]
+MemManage_Handler            0x546d    0xa  Code  Gb  startup_tm4c.o [1]
+NMI_Handler                  0x5463    0xa  Code  Gb  startup_tm4c.o [1]
+Next_Base_Sign          0x2000'005a    0x1  Data  Gb  Robot.o [1]
+Open_Gripper                  0xbdd    0xc  Code  Gb  Robot.o [1]
+Pawn                         0x4107  0x35c  Code  Gb  chess.o [1]
+Queen                        0x4475  0x66e  Code  Gb  chess.o [1]
+Region$$Table$$Base          0x55bc          --   Gb  - Linker created -
+Region$$Table$$Limit         0x55cc          --   Gb  - Linker created -
+Release_Gripper               0xbf5    0xa  Code  Gb  Robot.o [1]
+Right_Move                   0x1447    0xe  Code  Gb  Robot.o [1]
+Robot_INIT                    0x26d   0xf8  Code  Gb  Robot.o [1]
+Robots_Move                   0x365   0x5c  Code  Gb  Robot.o [1]
+Robots_Turn                  0x3a15  0x2a2  Code  Gb  chess.o [1]
+Rock                         0x4ae9  0x34c  Code  Gb  chess.o [1]
+Row                          0x142d    0x6  Code  Gb  Robot.o [1]
+Set_Robot_Angles              0x811  0x3cc  Code  Gb  Robot.o [1]
+Set_T0_Match                 0x23e3    0x6  Code  Gb  Timer0_PWM_prog.o [1]
+Start_Game                    0xc77   0x8a  Code  Gb  Robot.o [1]
+SysTick_Fun                  0x54e5    0x2  Code  Gb  SysTick_prog.o [1]
+SysTick_Handler              0x54db    0x8  Code  Gb  bsp.o [1]
+Timer0_32_init               0x2371   0x72  Code  Gb  Timer0_PWM_prog.o [1]
+Unused_Handler               0x548b    0xa  Code  Gb  startup_tm4c.o [1]
+UsageFault_Handler           0x5481    0xa  Code  Gb  startup_tm4c.o [1]
+Which_Piece                  0x1115   0x24  Code  Gb  Robot.o [1]
+WideTimer0A_IRQHandler       0x23e9   0x18  Code  Gb  Timer0_PWM_prog.o [1]
+Wrong_Move                   0x1439    0xe  Code  Gb  Robot.o [1]
+__NVIC_SystemReset           0x54ad   0x1a  Code  Lc  bsp.o [1]
+__aeabi_cdcmpeq              0x39f5         Code  Gb  DblCmpEq.o [3]
+__aeabi_cdcmple              0x37a1         Code  Gb  DblCmpLe.o [3]
+__aeabi_cdrcmple             0x39a1         Code  Gb  DblCmpGe.o [3]
+__aeabi_d2iz                 0x30c9         Code  Gb  DblToS32.o [3]
+__aeabi_dadd                 0x2ae5         Code  Gb  DblAdd.o [3]
+__aeabi_ddiv                 0x2c61         Code  Gb  DblDiv.o [3]
+__aeabi_dmul                 0x2941         Code  Gb  DblMul.o [3]
+__aeabi_dsub                 0x2fe5         Code  Gb  DblSub.o [3]
+__aeabi_i2d                  0x39d1         Code  Gb  S32ToDbl.o [3]
+__aeabi_memclr4              0x5399         Code  Gb  ABImemclr4.o [4]
+__aeabi_ui2d                 0x2925         Code  Gb  U32ToDbl.o [3]
+__cmain                      0x55cd         Code  Gb  cmain.o [4]
+__exit                       0x5601   0x14  Code  Gb  exit.o [5]
+__iar_Atan64                 0x37d1  0x1d0  Code  Gb  iar_Atan64.o [3]
+__iar_Memset4_word           0x53a1         Code  Gb  ABImemset48.o [4]
+__iar_Memset8_word           0x53a1         Code  Gb  ABImemset48.o [4]
+__iar_Sin64                  0x3361  0x3aa  Code  Lc  cos_sin64.o [3]
+__iar_acos64                 0x3105   0xc8  Code  Gb  acos64.o [3]
+__iar_asin64                 0x31cd   0xec  Code  Gb  asin64.o [3]
+__iar_atan64                 0x32b9   0xa8  Code  Gb  atan64.o [3]
+__iar_dadd                   0x2ff5         Code  Gb  DblSub.o [3]
+__iar_data_init3             0x5571   0x28  Code  Gb  data_init.o [4]
+__iar_dsub                   0x2af5         Code  Gb  DblAdd.o [3]
+__iar_dsubStart              0x2b07         Code  Gb  DblAdd.o [3]
+__iar_init_vfp               0x5599         Code  Gb  fpinit_M.o [3]
+__iar_packbits_init_single3
+                             0x5539   0x38  Code  Gb  packbits_init_single.o [4]
+__iar_program_start          0x5639         Code  Gb  cstartup_M.o [4]
+__iar_sin64                  0x379d    0x4  Code  Gb  cos_sin64.o [3]
+__iar_sin_medium             0x379d    0x4  Code  Gb  cos_sin64.o [3]
+__iar_sin_medium64           0x379d    0x4  Code  Gb  cos_sin64.o [3]
+__iar_sin_mediuml            0x379d    0x4  Code  Gb  cos_sin64.o [3]
+__iar_sqrt64                 0x2ef1         Code  Gb  sqrt.o [3]
+__iar_vfp___iar_sqrt64       0x2ee1         Code  Gb  sqrt.o [3]
+__iar_vfp_acos               0x2eaf    0xc  Code  Gb  math_wrappers64.o [3]
+__iar_vfp_asin               0x2ebb    0xc  Code  Gb  math_wrappers64.o [3]
+__iar_vfp_atan               0x2ec7    0xc  Code  Gb  math_wrappers64.o [3]
+__iar_vfp_sin                0x2ed3    0xc  Code  Gb  math_wrappers64.o [3]
+__iar_vfp_sqrt               0x2ee1         Code  Gb  sqrt.o [3]
+__iar_vfp_sqrtl              0x2ee1         Code  Gb  sqrt.o [3]
+__low_level_init             0x55eb    0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0  0x26c  Data  Gb  startup_tm4c.o [1]
+_call_main                   0x55d9         Code  Gb  cmain.o [4]
+_exit                        0x55f5         Code  Gb  cexit.o [4]
+_main                        0x55e7         Code  Gb  cmain.o [4]
+a                            0x54f8   0x40  Data  Lc  iar_Atan64.o [3]
+acos                         0x3105   0xc8  Code  Gb  acos64.o [3]
+acosl                        0x3105   0xc8  Code  Gb  acos64.o [3]
+asin                         0x31cd   0xec  Code  Gb  asin64.o [3]
+asinl                        0x31cd   0xec  Code  Gb  asin64.o [3]
+assert_failed                0x54d1    0xa  Code  Gb  bsp.o [1]
+atan                         0x32b9   0xa8  Code  Gb  atan64.o [3]
+atanl                        0x32b9   0xa8  Code  Gb  atan64.o [3]
+board_inputs            0x2000'0048    0x8  Data  Gb  Robot.o [1]
+chess_board             0x2000'0008   0x40  Data  Gb  chess.o [1]
+exit                         0x55ef    0x4  Code  Gb  exit.o [2]
+main                         0x53d5   0x84  Code  Gb  main.o [1]
+prob_num                     0x3cb7   0xfc  Code  Gb  chess.o [1]
+sin                          0x379d    0x4  Code  Gb  cos_sin64.o [3]
+sinl                         0x379d    0x4  Code  Gb  cos_sin64.o [3]
+sqrt                         0x2ef1         Code  Gb  sqrt.o [3]
+sqrtl                        0x2ef1         Code  Gb  sqrt.o [3]
+x                       0x2000'0050    0x2  Data  Gb  main.o [1]
+
+
+[1] = E:\WorkSpace\IAR\Chess Project\Debug\Obj
+[2] = dl7M_tln.a
+[3] = m7M_tls.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  21 328 bytes of readonly  code memory
+     812 bytes of readonly  data memory
+   4 188 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
